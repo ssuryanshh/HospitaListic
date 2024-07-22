@@ -70,7 +70,11 @@ async function LoginUserController(req, res) {
     });
     res.status(httpStatus.OK).json({
       success: true,
+      userId: user.data._id,
+      email: user.data.email,
       token: JWT_TOKEN,
+      name:user.data.name,
+      role:user.data.role
     });
   } catch (error) {
     console.log(error);
