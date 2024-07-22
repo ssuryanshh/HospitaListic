@@ -1,0 +1,34 @@
+.hospitalistic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    width: 100%; 
+    height: 40vh; 
+    color: azure;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("./image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+.content>input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80vw;
+  }
+
+  .content>input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #007bff;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
