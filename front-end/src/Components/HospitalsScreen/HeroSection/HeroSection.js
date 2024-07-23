@@ -10,8 +10,6 @@ function toPascalCase(str) {
 
 function HeroSection({ city }) {
   const cityName = toPascalCase(city);
-  
-  console.log(cityName);
 
   return (
     <div className='hospitals-container'>

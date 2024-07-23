@@ -1,37 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400&display=swap');
-.navbar-container{
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&display=swap');
+
+/* Navbar container */
+.navbar-container {
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
-    width: 98%;
-    font-size: 20px;
     align-items: center;
-
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 400;
+    padding: 20px 30px;
+    font-size: 30px;
+    background-color: #f8f9fa;
+    font-family: "Aref Ruqaa Ink", serif;
+    font-weight: 700;
     font-style: normal;
-   }
+    z-index: 1000; /* Ensure the navbar is above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
 
+/* Navbar left section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
 
+/* Navbar right section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Increase space between HOME and LOGIN/REGISTER */
+}
+
+/* Navbar links */
 .navbar-container a {
-   color: black;
+    color: black;
     text-decoration: none;
     font-size: 18px;
 }
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-  }
-  
-  .navbar-container span {
-    margin-right: 15px;
-  }
-  
-  .logout-button {
+/* Navbar logout button */
+.logout-button {
     margin-left: 10px;
     background-color: #ff4d4f;
     color: white;
@@ -39,9 +49,61 @@
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
-  }
-  
-  .logout-button:hover {
+    font-size: 16px; /* Adjust font size for better appearance */
+}
+
+.logout-button:hover {
     background-color: #ff7875;
-  }
-  
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column; /* Stack items vertically */
+        font-size: 24px; /* Reduce font size */
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .navbar-left, .navbar-right {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbar-right {
+        gap: 20px; /* Adjust space between items for smaller screens */
+    }
+
+    .navbar-container a {
+        font-size: 16px; /* Smaller font size for links */
+        margin-bottom: 10px; /* Add space between links */
+    }
+
+    .logout-button {
+        font-size: 14px; /* Smaller font size for the button */
+        padding: 5px 8px; /* Adjust padding */
+    }
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 480px) {
+    .navbar-container {
+        font-size: 20px; /* Further reduce font size */
+        padding: 10px 10px; /* Further adjust padding */
+    }
+
+    .navbar-container a {
+        font-size: 14px; /* Smaller font size for links */
+    }
+
+    .logout-button {
+        font-size: 12px; /* Even smaller font size for the button */
+        padding: 4px 8px; /* Adjust padding */
+    }
+}
+
+/* Ensure main content is not hidden behind fixed navbar */
+body {
+    margin: 0;
+    padding-top: 60px; /* Adjust based on navbar height */
+}

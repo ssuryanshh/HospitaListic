@@ -1,20 +1,62 @@
-.new-section {
-    width: 100%;
-    margin: 0 auto;
-    text-align: left;
+/* Container for the Hero Section */
+.hospitals-container {
+  width: 100%;
+  padding: 0 20px; /* Padding to avoid edge-to-edge content */
+  box-sizing: border-box;
+}
 
-  }
-  
+/* New section styling */
+.new-section {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center; /* Center-align text for better visual appeal */
+}
+
+/* Heading styling */
+.new-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+}
+
+/* Paragraph styling */
+.new-section p {
+  margin-bottom: 2em;
+  font-size: 1.2em; /* Slightly larger font size for better readability */
+}
+
+/* Horizontal line styling */
+.new-section hr {
+  margin: 2em 0;
+  border: 1px solid #ddd; /* Light border color for visibility */
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
   .new-section h1 {
-    font-size: 2.5em;
-    margin-bottom: 1em;
+    font-size: 2em;
   }
 
   .new-section p {
-    margin-bottom: 2em;
+    font-size: 1em;
+    margin-bottom: 1.5em;
   }
 
-    
   .new-section hr {
-    margin: 2em 0;
+    margin: 1.5em 0;
   }
+}
+
+@media (max-width: 480px) {
+  .new-section h1 {
+    font-size: 1.75em;
+  }
+
+  .new-section p {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+  }
+
+  .new-section hr {
+    margin: 1em 0;
+  }
+}

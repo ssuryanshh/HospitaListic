@@ -6,7 +6,7 @@ function HeroSection({ setSearch }) {
       <div className="content">
         <h2>Welcome to Hospitalistic</h2>
         <br />
-        <p>Explore the world with fantastic places to venture around.</p>
+        <p>Check Out Different Hospitals Across Different Cities</p>
         <br />
         <input
           type="text"

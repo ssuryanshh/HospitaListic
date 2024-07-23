@@ -1,0 +1,87 @@
+/* General styles for the hospital registration container */
+.hospital-register {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form styling */
+#form {
+  width: 80%; /* Adjust width for smaller screens */
+  max-width: 600px; /* Set a max-width to prevent it from becoming too wide */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  padding: 2%;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 1%;
+  background-color: #eeeeee;
+  font-size: 1rem; /* Adjust font size */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Button styling */
+button.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  width: 100%; /* Full width on smaller screens */
+  max-width: 150px; /* Ensure button doesn't grow too large */
+  height: 50px;
+  background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+  border-radius: 30px;
+  border: 1px solid #8F9092;
+  transition: all 0.2s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem; /* Adjust font size */
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
+}
+
+button.register:hover {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+button.register:active {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+button.register:focus {
+  box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 768px) {
+  #form {
+      width: 90%; /* Adjust width for tablets */
+      padding: 3%; /* Increase padding for better spacing */
+      font-size: 0.9rem; /* Adjust font size for readability */
+  }
+
+  button.register {
+      width: 100%; /* Full width for button */
+      font-size: 0.8rem; /* Smaller font size */
+  }
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 480px) {
+  #form {
+      width: 95%; /* Adjust width for mobile phones */
+      padding: 4%; /* Increase padding for better spacing */
+      font-size: 0.8rem; /* Adjust font size */
+  }
+
+  button.register {
+      width: 100%; /* Full width for button */
+      font-size: 0.7rem; /* Smaller font size */
+  }
+}

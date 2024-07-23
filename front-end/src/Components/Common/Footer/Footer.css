@@ -1,10 +1,43 @@
-.footer{
+/* Ensure the body and html take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Container to ensure the footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1; /* Take up remaining space */
+}
+
+/* Footer styling */
+.footer {
     color: gray;
     background-color: rgb(223, 223, 223);
     width: 100%;
     text-align: center;
+    padding: 0 0; /* Reduce padding for a shorter footer */
+    font-size: small; /* Reduce font size for a more compact look */
+    position: relative; /* Ensure it's positioned relative to its normal flow */
     bottom: 0;
 }
-.footer>p{
-    font-size: larger;
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer {
+        font-size: small; /* Keep a smaller font size for tablets */
+        padding: 4px 0; /* Adjust padding for a shorter footer on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        font-size: x-small; /* Further reduce font size for mobile phones */
+        padding: 3px 0; /* Further reduce padding for a shorter footer on mobile phones */
+    }
 }

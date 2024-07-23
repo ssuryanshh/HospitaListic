@@ -1,18 +1,45 @@
-.details-screen-container{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    width: 70%;
-    padding: 15px;
-    justify-content:space-evenly
-}
-
-.details{
+/* Container for the entire detail screen */
+.details-screen-container {
     display: flex;
     flex-direction: column;
-    border-radius: 1%;
-    padding: 15px;
-    width: 140%;
-}
-
-
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Flex container for the details and update form */
+  .details-screen-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Flexbox container for details and form */
+  .details-container, .update-form-container {
+    flex: 1;
+  }
+  
+  /* Make sure the details container and update form are responsive */
+  @media (min-width: 768px) {
+    .details-screen-content {
+      flex-direction: row;
+    }
+  
+    .details-container {
+      width: 60%;
+    }
+  
+    .update-form-container {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .details-container, .update-form-container {
+      width: 100%;
+    }
+  }
+  

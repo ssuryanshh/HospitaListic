@@ -1,13 +1,40 @@
-.hospital-container{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+/* Container for the entire HospitalScreen */
+.hospital-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container for hospital cards */
+.hospital-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjusted gap for better spacing */
+  justify-content: center;
+  width: 100%;
+}
+
+/* Add button container */
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Added margin for spacing from other content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hospital-card-container {
+    gap: 15px;
   }
-  .hospital-card-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 40px;
+}
+
+@media (max-width: 480px) {
+  .hospital-card-container {
+    gap: 10px;
   }
-  
+}

@@ -1,26 +1,51 @@
+/* General styling for the hospital details */
 .details-container {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-}
-
-.image-container {
+  }
+  
+  .details-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .details-header h1 {
+    font-size: 2.4rem;
+    margin: 0;
+  }
+  
+  .details-header h4 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  
+  .details-container p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  /* Image carousel styling */
+  .image-container {
     position: relative;
     width: 100%;
     height: 50vh;
     overflow: hidden;
     margin: 20px 0;
-}
-
-img {
+  }
+  
+  .image-container img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1%;
-}
-
-.prev, .next {
+    border-radius: 8px;
+  }
+  
+  .image-container button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -32,47 +57,46 @@ img {
     padding: 10px;
     border-radius: 50%;
     z-index: 1;
-}
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev {
+  }
+  
+  .image-container .prev {
     left: 10px;
-}
-
-.next {
+  }
+  
+  .image-container .next {
     right: 10px;
-}
-
-p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-}
-
-h1, h3, h4 {
-    margin: 10px 0;
-}
-
-.details-container h1 {
-    font-size: 2.6rem;
-    margin-bottom: 10px;
-}
-
-.details-container h4 {
-    font-size: 1.4rem;
-}
-
-.details-header{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.detail{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
+  }
+  
+  .image-container button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .details-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .details-header h4 {
+      font-size: 1.2rem;
+    }
+  
+    .details-container p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .details-header h1 {
+      font-size: 1.6rem;
+    }
+  
+    .details-header h4 {
+      font-size: 1rem;
+    }
+  
+    .details-container p {
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,0 +1,157 @@
+/* Styling for the update form */
+.update-form {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+form.update {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+form.update > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form.update > div > label {
+  font-size: 1rem;
+}
+
+form.update > div > input,
+form.update > div > textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+button.update, button.delete {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+
+button.update:before, button.delete:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+button.update:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+button.update:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+}
+
+button.update:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+button.update:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+button.delete:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #ff1100;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+button.delete:hover {
+  color: #ffffff;
+  border: 1px solid #ff1100;
+}
+
+button.delete:hover:before {
+  top: -35%;
+  background-color: #ff1100;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+button.delete:hover:after {
+  top: -45%;
+  background-color: #ff1100;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form.update > div {
+    flex-direction: column;
+  }
+
+  form.update > div > label,
+  form.update > div > input,
+  form.update > div > textarea {
+    font-size: 1.2rem;
+  }
+
+  button.update, button.delete {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  form.update > div > label,
+  form.update > div > input,
+  form.update > div > textarea {
+    font-size: 1rem;
+  }
+
+  button.update, button.delete {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+}

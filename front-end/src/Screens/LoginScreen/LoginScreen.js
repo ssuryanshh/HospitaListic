@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginScreen.css";
 import config from "../../config";
+import { toast } from "react-toastify";
 
 const { BASE_API_URL } = config;
 
@@ -43,7 +44,6 @@ function LoginScreen({ setUserInfo }) {
     try {
       let res = await fetch(ENDPOINT, OPTION);
       res = await res.json();
-      console.log(res);
       if (res.success) {
         const { userId, token, email, name, role } = res;
         setUserInfo({
@@ -54,12 +54,40 @@ function LoginScreen({ setUserInfo }) {
           role: role,
           name: name,
         });
+        toast.success('Successfully logged in!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         navigate("/");
       } else {
-        console.error("Login failed:", res.message);
+        toast.error("Login Failed", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } catch (error) {
-      console.error("Error:", error);
+      toast.error(error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -81,14 +109,41 @@ function LoginScreen({ setUserInfo }) {
     try {
       let res = await fetch(ENDPOINT, OPTION);
       res = await res.json();
-      console.log(res);
       if (res.success) {
+        toast.success('Successfully registered! Please Sign in to continue!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         checkboxRef.current.checked = false;
       } else {
-        console.error("Sign up failed:", res.message);
+        toast.error("Signup failed", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } catch (error) {
-      console.error("Error:", error);
+      toast.error(error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
