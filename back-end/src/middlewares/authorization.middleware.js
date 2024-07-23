@@ -7,7 +7,7 @@ require("dotenv").config();
 function Authorization(ALLOWED_ROLES) {
   return async function (req, res, next) {
     try {
-      const TOKEN = req.headers.authorization.split(" ")[1];
+      const TOKEN = req.headers.authorization;
       const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
       const result = await jwt.verify(TOKEN, JWT_SECRET_KEY);
 

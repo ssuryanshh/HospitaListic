@@ -26,6 +26,7 @@ async function RegisterUserController(req, res) {
     if (user.success) {
       res.status(httpStatus.CREATED).json({
         success: true,
+        
       });
     } else {
       throw new Error("Failed to register user");
