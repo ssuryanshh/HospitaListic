@@ -74,7 +74,7 @@ async function UpdateHospitalByIdController(req, res) {
   try {
     const { id } = req.query;
     const updateData = req.body;
-    const result = await updateHospitalById(id, updateData);
+    const result = await UpdateHospitalByIdService(id, updateData);
     res
       .status(result.success ? httpStatus.OK : httpStatus.INTERNAL_SERVER_ERROR)
       .json(result);
