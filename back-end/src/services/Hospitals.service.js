@@ -1,5 +1,6 @@
 const Hospitals = require("./../models/Hospitals.model");
 const Cities = require("./../models/City.model");
+const HospitalDetail = require("./../models/HospitalDetails.model")
 
 async function SaveDatainHospitals(cityId, name, image, speciality, rating) {
   try {
@@ -91,7 +92,7 @@ async function UpdateHospitalByIdService(id, updateData) {
     } = updateData;
 
     // Update basic hospital information
-    const hospitalResult = await Hospital.findByIdAndUpdate(id, hospitalData, {
+    const hospitalResult = await Hospitals.findByIdAndUpdate(id, hospitalData, {
       new: true,
     });
 
