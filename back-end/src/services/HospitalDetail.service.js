@@ -24,7 +24,7 @@ async function SaveNewHospitalDetailService(
       throw new Error("Error in SaveNewHospitalDetailService");
     }
   } catch (err) {
-    console.log(error);
+    console.log(err);
     return {
       success: false,
     };
@@ -45,7 +45,7 @@ async function GetHospitalDetailBYHospitalIdService(hospitalId) {
       throw new Error("Error in GetHospitalDetailBYHospitalIdService");
     }
   } catch (err) {
-    console.log(err);
+    
     return {
       success: false,
     };
