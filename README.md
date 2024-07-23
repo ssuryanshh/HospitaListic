@@ -1,6 +1,6 @@
-# Hospitalistic
+# HospitaListic
 
-Hospitalistic is a comprehensive hospital management website that consists of both frontend and backend components. This repository includes all the code for both parts of the project.
+HospitaListic is a comprehensive hospital management website that consists of both frontend and backend components. This repository includes all the code for both parts of the project.
 
 ## Table of Contents
 
