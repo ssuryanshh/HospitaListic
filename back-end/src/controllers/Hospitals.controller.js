@@ -74,20 +74,14 @@ async function UpdateHospitalByIdController(req, res) {
   try {
     const { id } = req.query;
     const updateData = req.body;
-    const result = await UpdateHospitalByIdService(id, updateData);
-    if (result.success) {
-      res.status(httpStatus.OK).json({
-        success: true,
-        data: result.data,
-      });
-    } else {
-      throw new Error("Error in UpdateHospitalByIdController");
-    }
+    const result = await updateHospitalById(id, updateData);
+    res
+      .status(result.success ? httpStatus.OK : httpStatus.INTERNAL_SERVER_ERROR)
+      .json(result);
   } catch (err) {
-    res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
-      success: false,
-      message: err.message,
-    });
+    res
+      .status(httpStatus.INTERNAL_SERVER_ERROR)
+      .json({ success: false, message: err.message });
   }
 }
 

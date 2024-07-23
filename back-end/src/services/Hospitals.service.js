@@ -4,8 +4,8 @@ const Cities = require("./../models/City.model");
 async function SaveDatainHospitals(cityId, name, image, speciality, rating) {
   try {
     const city = await Cities.findById(cityId);
-    if(!city){
-        return {status: 404, message: "City not found"}
+    if (!city) {
+      return { status: 404, message: "City not found" };
     }
 
     const result = await Hospitals.create({
@@ -81,28 +81,48 @@ async function DeleteHospitalByIdService(id) {
 }
 
 async function UpdateHospitalByIdService(id, updateData) {
-    try {
-      const result = await Hospitals.findByIdAndUpdate(id, updateData, { new: true });
-      if (result) {
-        return {
-          success: true,
-          data: result,
-        };
-      } else {
-        throw new Error("Error in UpdateHospitalByIdService");
-      }
-    } catch (err) {
-      console.log(err);
-      return {
-        success: false,
-        message: err.message,
-      };
-    }
-  }
+  try {
+    const {
+      description,
+      images,
+      numberOfDoctors,
+      numberOfDepartments,
+      ...hospitalData
+    } = updateData;
 
+    // Update basic hospital information
+    const hospitalResult = await Hospital.findByIdAndUpdate(id, hospitalData, {
+      new: true,
+    });
+
+    // Update hospital detailed information if provided
+    let hospitalDetailResult;
+    if (description || images || numberOfDoctors || numberOfDepartments) {
+      hospitalDetailResult = await HospitalDetail.findOneAndUpdate(
+        { hospitalId: id },
+        { description, images, numberOfDoctors, numberOfDepartments },
+        { new: true, upsert: true } // upsert: true creates a new document if none exists
+      );
+    }
+
+    return {
+      success: true,
+      data: {
+        hospital: hospitalResult,
+        details: hospitalDetailResult,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      success: false,
+      message: err.message,
+    };
+  }
+}
 module.exports = {
   SaveDatainHospitals,
   GetHospitalsByCityService,
   DeleteHospitalByIdService,
-  UpdateHospitalByIdService
+  UpdateHospitalByIdService,
 };
