@@ -15,7 +15,7 @@ HospitaListic is a comprehensive hospital management website that consists of bo
 
 ## Project Overview
 
-Hospitalistic provides a platform for managing hospital data efficiently. It features a user-friendly interface and robust backend support for data management.
+HospitaListic provides a platform for managing hospital data efficiently. It features a user-friendly interface and robust backend support for data management. This project was developed as part of my MERN stack training at Coding Spoon. [Training Certificate](https://credsverse.com/credentials/cc005d0e-dfb6-467c-adec-9c47906c0607)
 
 ## Frontend
 
