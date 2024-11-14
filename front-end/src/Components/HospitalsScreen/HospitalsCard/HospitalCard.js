@@ -10,7 +10,7 @@ function HospitalCard({ _id, name, image, speciality, rating }) {
         <div className="rating">{rating} <StarFilled /> </div>
         <div className="hospital-info">
           <h3>{name}</h3>
-          //<p>Specialities: {speciality.join(", ")}</p>
+          
         </div>
       </div>
     </Link>
