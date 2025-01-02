@@ -4,7 +4,6 @@ html, body {
   margin: 0;
 }
 
-/* Container for App to ensure it takes full height and footer is at bottom */
 .App {
   display: flex;
   flex-direction: column;
